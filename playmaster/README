@@ -1,0 +1,5 @@
+To Run, type:
+
+python PlayMasterSimulator.py
+
+Do not modify files in ./database/ -- they are the persisted data from the system!
