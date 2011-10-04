@@ -45,9 +45,9 @@ for stu in students:
 		stu.weeks.append(week)
 
 d = {
-	'students': students,
+	'students': set(students),
 	'songs': songs,
-	'instructors': instructors
+	'instructors': set(instructors)
 	}
 	
 ph.setCurrentDict(d)
