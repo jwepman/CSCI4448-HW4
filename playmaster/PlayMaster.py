@@ -6,11 +6,7 @@ class PlayMaster(object):
 	__objectsDictionary = None
 	def __init__(self):
 		self.__persistenceHandler = PersistenceHandler()
-		self.__objectsDictionary = self.__persistenceHandler.getCurrentDict()
-		for s in self.__objectsDictionary['students']:
-			s.weeks.append(self.__objectsDictionary['weeks'][0])
-			
-			
+		self.__objectsDictionary = self.__persistenceHandler.getCurrentDict()			
 	def getByName(self,key,name):
 		try:
 			for student in self.__objectsDictionary[key]:

@@ -26,6 +26,6 @@ class PlayObject(object):
 		return result
 	def __str__(self):
 		return "PlayObject<"+str(self.song)+"> play count="+str(self.currentPlayCount)+" out of "+str(self.requiredPlayCount)+" lastplayed on: "+str(self.lastPlayed)
-	def __eq__(self,other):
-		#comparison of play objects -- by song
-		return self.song == other.song
+	#def __eq__(self,other):
+	#	#comparison of play objects -- by song
+	#	return self.song == other.song
