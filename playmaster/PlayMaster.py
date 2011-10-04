@@ -1,5 +1,5 @@
 #PlayMaster.py - abstract the basics from our simulator
-#Josh Wepman, joshua.wepman@colorado.edu
+#Josh Wepman, joshua.wepman@colorado.edu and Kyle Poole, 2kylepoole@gmail.com
 from PersistenceHandler import *
 class PlayMaster(object):
 	__persistenceHandler = None
@@ -7,6 +7,10 @@ class PlayMaster(object):
 	def __init__(self):
 		self.__persistenceHandler = PersistenceHandler()
 		self.__objectsDictionary = self.__persistenceHandler.getCurrentDict()
+		for s in self.__objectsDictionary['students']:
+			s.weeks.append(self.__objectsDictionary['weeks'][0])
+			
+			
 	def getByName(self,key,name):
 		try:
 			for student in self.__objectsDictionary[key]:

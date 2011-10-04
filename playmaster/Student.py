@@ -1,5 +1,5 @@
 #Student.py - implementation of student class
-#Josh Wepman, joshua.wepman@colorado.edu
+#Josh Wepman, joshua.wepman@colorado.edu and Kyle Poole, 2kylepoole@gmail.com
 import Instructor
 
 class Student(object):
@@ -14,6 +14,7 @@ class Student(object):
 			raise NameError("Invalid instructor specified!")
 		self.instructor.addStudent(self)
 		self.myCurrentLevel = currentLevel
+		self.weeks = []
 	def addWeek(self,week):
 		self.weeks.append(week)
 	def __str__(self):

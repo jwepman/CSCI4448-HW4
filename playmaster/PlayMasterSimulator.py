@@ -1,6 +1,6 @@
 #PlayMasterSimulator.py -- graphical interface to our playlist system!
 #Yes, there's a lot of strings/code and stuff -- this is for the simulation, each option interacts with the applicable objects and the PlayMaster by passing appropriate messages to each object.
-#Josh Wepman, joshua.wepman@colorado.edu
+#Josh Wepman, joshua.wepman@colorado.edu and Kyle Poole, 2kylepoole@gmail.com
 from PlayMaster import *
 from Song import * 
 from Student import *
@@ -66,9 +66,42 @@ class PlayMasterSimulator(object):
 			self.__playMaster.addByName('instructors',newIns)
 			self.doEnterContinue()
 		elif myInp == 4:
-			pass
+			print "\n\n"
+			print "Enter the name of your student"
+			studentName = raw_input()
+			print "Enter the name of the song you want to add"
+			songName = raw_input()
+			student = self.__playMaster.getByName('students',studentName)
+			if student == None:
+				print "Bzzt! Don't see that student in DB"
+				return
+			if len(student.weeks) == 0:
+				student.weeks.append(Week()) #create new [current] week if needed
+			song = self.__playMaster.getByName('songs',songName)
+			if song == None:
+				print "Song doesn't exist in DB, adding..."
+				song = Song.Song(songName, len(student.weeks)-1)
+			myNewPlayItem = AssignmentObject()
+			myNewPlayItem.assignSong(song)
+			student.weeks[-1].addPlayItem(myNewPlayItem)
+			self.doEnterContinue()
 		elif myInp == 5:
-			pass
+			print "\n\n"
+			print "Enter the name of your student"
+			studentName = raw_input()
+			print "Enter the name of the song you want to add"
+			songName = raw_input()
+			student = self.__playMaster.getByName('students',studentName)
+			if student == None:
+				return
+			song = self.__playMaster.getByName('songs',songName)
+			if song == None:
+				return
+			for week in student.weeks:
+				for playobj in week.myPlayList:
+					if playobj.song == song:
+						playobj.playSong()
+			self.doEnterContinue()
 		elif myInp == 6:
 			print "\n\n"
 			print "Enter student name?"

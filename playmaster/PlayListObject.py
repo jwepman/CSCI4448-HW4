@@ -1,5 +1,5 @@
 #PlayListObject.py - implements playlist object - simply has different default values
-#Josh Wepman, joshua.wepman@colorado.edu
+#Josh Wepman, joshua.wepman@colorado.edu and Kyle Poole, 2kylepoole@gmail.com
 import PlayObject
 
 class PlayListObject(PlayObject.PlayObject):

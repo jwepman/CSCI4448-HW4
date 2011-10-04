@@ -1,5 +1,5 @@
 #PersistenceHandler.py - handle persistence for this project - we serialize all of our objects and store in a massive JSON-esque dictionary that we pass to PlayMaster
-#Josh Wepman, joshua.wepman@colorado.edu
+#Josh Wepman, joshua.wepman@colorado.edu and Kyle Poole, 2kylepoole@gmail.com
 import pickle #for serialization
 import os
 
@@ -19,6 +19,7 @@ class PersistenceHandler(object):
 		self.__state=0
 		self.__currentDict = dictionary
 		self.__serialize()
+		self.write()
 	def read(self):
 		#read in persistence file, if exists. Returns dictionary of lists of objects, keyed by object type.
 		if os.path.exists(self.persistenceFileName):

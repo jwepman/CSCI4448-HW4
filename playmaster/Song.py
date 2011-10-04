@@ -1,5 +1,5 @@
 #Song.py - implements song class 
-#Josh Wepman, joshua.wepman@colorado.edu
+#Josh Wepman, joshua.wepman@colorado.edu and Kyle Poole, 2kylepoole@gmail.com
 class Song(object):
 	name = ""
 	level = 0

@@ -1,5 +1,5 @@
 #Instructor.py - implements instructor class for my music thingy
-#Josh Wepman, joshua.wepman@colorado.edu
+#Josh Wepman, joshua.wepman@colorado.edu and Kyle Poole, 2kylepoole@gmail.com
 import Student
 
 class Instructor(object):
@@ -7,6 +7,7 @@ class Instructor(object):
 	name = ""
 	def __init__(self,name):
 		self.name = name
+		self.students = set()
 	def addStudent(self,student):
 		if isinstance(student,Student.Student):
 			self.students.add(student)

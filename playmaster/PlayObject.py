@@ -1,5 +1,5 @@
 #PlayObject.py - parent class for PlayList and AssignmentList -- provides general specification for these objects to implement
-#Josh Wepman, joshua.wepman@colorado.edu
+#Josh Wepman, joshua.wepman@colorado.edu and Kyle Poole, 2kylepoole@gmail.com
 import datetime
 
 class PlayObject(object):
